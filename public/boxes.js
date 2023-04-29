@@ -5,11 +5,11 @@ export const boxes = [
     },
     {
         id: 2,
-        on: false
+        on: true
     },
     {
         id: 3,
-        on: false
+        on: true
     },
     {
         id: 4,
@@ -21,11 +21,11 @@ export const boxes = [
     },
     {
         id: 6,
-        on: false
+        on: true
     }
     ,
     {
         id: 7,
-        on: false
+        on: true
     }
 ]
