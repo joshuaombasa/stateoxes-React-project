@@ -20,7 +20,11 @@ function App() {
   })
 
   function toggle(id) {
-    
+    setBoxData((prevBoxData) => {
+      return prevBoxData.map((box) => {
+        return box.id === id? {...box, on: !box.on} : box
+      })
+    })
   }
 
 
