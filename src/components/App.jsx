@@ -10,9 +10,18 @@ function App() {
 
   const [boxData, setBoxData] = React.useState(boxes)
 
-const boxesJsx = boxData.map((box) => {
-  return <Box key={box.id} on={box.on}/>
-})
+  const boxesJsx = boxData.map((box) => {
+    return <Box
+      id={box.id}
+      key={box.id}
+      on={box.on}
+      handleClick={toggle}
+    />
+  })
+
+  function toggle(id) {
+    
+  }
 
 
   return (
