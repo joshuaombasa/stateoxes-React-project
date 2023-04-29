@@ -11,15 +11,14 @@ function App() {
   const [boxData, setBoxData] = React.useState(boxes)
 
 const boxesJsx = boxData.map((box) => {
-  return <Box />
+  return <Box key={box.id} on={box.on}/>
 })
 
 
   return (
-    <>
-      <p>Joshua is here</p>
+    <div className='boxes--container'>
       {boxesJsx}
-    </>
+    </div>
   )
 }
 
