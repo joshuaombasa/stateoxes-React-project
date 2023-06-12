@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function Box(props) {
+export default function Box({box, toggle}) {
     
-    const styling = {backgroundColor: props.on ?  "#222222" : ""}
+    const styling = {backgroundColor: box.on ?  "#222222" : ""}
 
     return (
         <div 
         className="box" 
         style={styling} 
-        onClick={() => {props.handleClick(props.id)}}></div>
+        onClick={toggle}></div>
     )
 }
