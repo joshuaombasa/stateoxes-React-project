@@ -12,12 +12,18 @@ function App() {
 
   const boxesJsx = boxData.map((box) => {
     return <Box
-      id={box.id}
-      key={box.id}
-      on={box.on}
-      handleClick={toggle}
-    />
+               box={box}
+               key={box.id}
+               handleClick={toggle}
+               toggle={() => toggle(box.id)}
+           />
   })
+
+  React.useEffect(() => {
+    console.log('effect happened')
+    return () => {console.log('watch this')}
+    
+  }, [])
 
   function toggle(id) {
     setBoxData((prevBoxData) => {
@@ -27,12 +33,15 @@ function App() {
     })
   }
 
-
   return (
     <div className='boxes--container'>
       {boxesJsx}
     </div>
   )
-}
+  }
+
+
+  
+
 
 export default App
