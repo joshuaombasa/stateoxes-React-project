@@ -8,6 +8,6 @@ export default function Box({box, toggle}) {
         <div 
         className="box" 
         style={styling} 
-        onClick={toggle}></div>
+        onClick={() => toggle(box.id)}></div>
     )
 }
