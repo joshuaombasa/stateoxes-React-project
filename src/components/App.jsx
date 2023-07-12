@@ -1,46 +1,29 @@
 
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import '../styles/App.css'
-
 import { boxes } from '../../public/boxes'
 import Box from './Box'
 
-
 function App() {
 
-  const [boxData, setBoxData] = React.useState(boxes)
+  const [boxesData, setBoxesData] = useState(null)
 
-  const boxesJsx = boxData.map((box) => {
-    return <Box
-               box={box}
-               key={box.id}
-               handleClick={toggle}
-               toggle={() => toggle(box.id)}
-           />
-  })
+  useEffect(() => {
+    setBoxesData(boxes)
+  },[])
 
-  React.useEffect(() => {
-    console.log('effect happened')
-    return () => {console.log('watch this')}
-    
-  }, [])
-
-  function toggle(id) {
-    setBoxData((prevBoxData) => {
-      return prevBoxData.map((box) => {
-        return box.id === id? {...box, on: !box.on} : box
-      })
-    })
+  let boxesJsx 
+  if (boxesData) {
+    boxesJsx = boxesData.map(box => <Box key={box.id} box={box}/>)
   }
 
   return (
-    <div className='boxes--container'>
-      {boxesJsx}
+    <div className="boxes--container">
+      {boxesData && boxesJsx}
     </div>
   )
+  
   }
-
-
   
 
 
