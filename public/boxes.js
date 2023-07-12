@@ -1,31 +1,34 @@
 export const boxes = [
     {
-        id: 1,
+        id: "1",
+        on: true
+    },
+    {
+        id: "2",
         on: false
     },
     {
-        id: 2,
+        id: "3",
         on: true
     },
     {
-        id: 3,
-        on: true
-    },
-    {
-        id: 4,
+        id: "4",
         on: false
     },
     {
-        id: 5,
+        id: "5",
+        on: true
+    },
+    {
+        id: "6",
         on: false
     },
     {
-        id: 6,
+        id: "7",
         on: true
-    }
-    ,
+    },
     {
-        id: 7,
-        on: true
-    }
+        id: "8 ",
+        on: false
+    },
 ]
